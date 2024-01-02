@@ -30,6 +30,7 @@ jobs:
       - name: Build Container image
         run: | 
           docker build -t ${{ vars.DOCKER_REPO }}:${{ github.run_number }} .
+          docker tag ${{ vars.DOCKER_REPO }}:${{ github.run_number }} ${{ vars.DOCKER_USER }}/${{ vars.DOCKER_REPO }}:${{ github.run_number }}
       - name: Publish Docker image
-        run: docker push ${{ vars.DOCKER_REPO }}:${{ github.run_number }}
+        run: docker push ${{ vars.DOCKER_USER }}/${{ vars.DOCKER_REPO }}:${{ github.run_number }}
 
