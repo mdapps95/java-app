@@ -30,8 +30,8 @@ jobs:
           mvn clean package
           ls -la
           ls -la target
-          echo ${{ var.DOCKER_REPO }}
-          echo ${{ var.DOCKER_USER }}
+          echo ${{ vars.DOCKER_REPO }}
+          echo ${{ vars.DOCKER_USER }}
 
       # - name: Login to DockerHub
       #   uses: docker/login-action@v2
