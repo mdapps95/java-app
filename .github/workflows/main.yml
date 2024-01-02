@@ -39,7 +39,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: https://github.com/mdapps95/keptn-klt.git
+          repository: 'mdapps95/keptn-klt'
           token: ${{ secrets.GIT_PAT }}
           ref: main
       - name: manifest update
