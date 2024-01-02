@@ -30,14 +30,16 @@ jobs:
           mvn clean package
           ls -la
           ls -la target
+          echo $DOCKER_REPO
+          echo ${DOCKER_REPO}
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v2
-        with:
-            username: $DOCKER_USER
-            password: ${{ secrets.DOCKER_TOKEN }}
-      - name: Build Container image
-        run: docker build -t $DOCKER_REPO:${{ github.run_number }} .
-      - name: Publish Docker image
-        run: docker push $DOCKER_REPO:${{ github.run_number }}
+      # - name: Login to DockerHub
+      #   uses: docker/login-action@v2
+      #   with:
+      #       username: $DOCKER_USER
+      #       password: ${{ secrets.DOCKER_TOKEN }}
+      # - name: Build Container image
+      #   run: docker build -t $DOCKER_REPO:${{ github.run_number }} .
+      # - name: Publish Docker image
+      #   run: docker push $DOCKER_REPO:${{ github.run_number }}
 
