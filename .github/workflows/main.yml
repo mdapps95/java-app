@@ -30,8 +30,6 @@ jobs:
           mvn clean package
           ls -la
           ls -la target
-          echo $DOCKER_REPO
-          echo ${{DOCKER_REPO}}
           echo ${{ var.DOCKER_REPO }}
           echo ${{ var.DOCKER_USER }}
 
