@@ -41,7 +41,7 @@ jobs:
         with:
           repository: 'mdapps95/keptn-klt'
           token: ${{ secrets.GIT_PAT }}
-          ref: main
+          ref: test
       - name: manifest update
         run: |
           ls -la
