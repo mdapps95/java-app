@@ -44,6 +44,7 @@ jobs:
           ref: main
       - name: manifest update
         run: |
+          ls -la
           git config --global user.name "mdapps95"
           git config --global user.email "mdapps95@gmail.com"
           sed -i "s|shmdus/java-app.*|${{ vars.DOCKER_USER }}/${{ vars.DOCKER_REPO }}:${{ github.run_number }}|g" deployment.yaml
